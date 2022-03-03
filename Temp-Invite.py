@@ -1,25 +1,34 @@
-import discord, asyncio
+from discord import colour
+from discord.ext import commands
+import discord
+from discord_buttons_plugin import *
+import asyncio
 
-token = 'token'
-
-intents = discord.Intents.default()
-intents.members = True
-client = discord.Client(intents=intents)
-
-@client.event
-async def on_member_join(m):
-    await asyncio.sleep(20)
-    i = discord.Embed(title='서버 멤버가 보내는 다이렉트 메시지 허용하기를 꺼주시기 바랍니다.',color=0x2f3136)
-    i.set_image(url='')
-    channel = client.get_guild(m.guild.id).text_channels[0]
-    i = await channel.create_invite(max_uses=1)
-
-    try:
-        await m.send(embed=i)
-        await m.send(i)
-        await m.kick()
-    except:
-        pass
+bot = commands.Bot(command_prefix = "!")
+buttons = ButtonsClient(bot)
+sever_id = #본섭 아이디
+channel_id = #링크가 보내질 채널 ID
 
 
-client.run(token)
+@buttons.click
+async def button_one(ctx):
+    link = await bot.get_channel(server_id).create_invite(max_uses=1,unique=True)
+    a = await ctx.reply(f"{link}", flags = MessageFlags().EPHEMERAL)
+
+@bot.command()
+async def create(ctx):
+        await buttons.send(
+            embed=discord.Embed(title=f'보안 초대링크', description='버튼을 눌러 서버링크를 생성해주세요\nClick button to generate serverlink', color=0x5afb4a)
+            channel = channel_id, 
+            components = [
+                ActionRow([
+                    Button(
+                        label="Generate serverlink", # 버튼이름
+                        style=ButtonType().Success, # 버튼 색깔 설정
+                        custom_id="button_one" # 고유 id (불러올때 쓰임)
+                    )
+                ])
+            ]
+        )
+
+bot.run("ODkwOTczMzM3OTAyMjYwMjM1.YU3llQ.Xne1mLKdT1i-SG-F_8i60Rnk7Kg")
