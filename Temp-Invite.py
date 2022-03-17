@@ -16,7 +16,7 @@ async def buttonclick(ctx):
     a = await ctx.reply(f"{link}", flags=MessageFlags().EPHEMERAL)
 
 @bot.command()
-async def create(ctx):
+async def 생성(ctx):
         await buttons.send(
             embed=discord.Embed(title=f'보안 초대링크', description='버튼을 눌러 서버링크를 생성해주세요\nClick button to generate serverlink', color=0x5afb4a)
             channel = channel_id, 
