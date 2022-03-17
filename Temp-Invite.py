@@ -11,7 +11,7 @@ channel_id = #링크가 보내질 채널 ID
 token = ''
 
 @buttons.click
-async def button_one(ctx):
+async def buttonclick(ctx):
     link = await bot.get_channel(server_id).create_invite(max_uses=1,unique=True)
     a = await ctx.reply(f"{link}", flags = MessageFlags().EPHEMERAL)
 
@@ -25,7 +25,7 @@ async def create(ctx):
                     Button(
                         label="Generate serverlink", # 버튼이름
                         style=ButtonType().Success, # 버튼 색깔 설정
-                        custom_id="button_one" # 고유 id (불러올때 쓰임)
+                        custom_id="buttonclick" # 고유 id (불러올때 쓰임)
                     )
                 ])
             ]
