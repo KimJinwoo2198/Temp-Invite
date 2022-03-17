@@ -9,7 +9,6 @@ buttons = ButtonsClient(bot)
 sever_id = #본섭 아이디
 channel_id = #링크가 보내질 채널 ID
 
-
 @buttons.click
 async def button_one(ctx):
     link = await bot.get_channel(server_id).create_invite(max_uses=1,unique=True)
