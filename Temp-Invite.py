@@ -4,7 +4,7 @@ import discord
 from discord_buttons_plugin import *
 import asyncio
 
-bot = commands.Bot(command_prefix = "!")
+bot = commands.Bot(command_prefix="!")
 buttons = ButtonsClient(bot)
 sever_id = #본섭 아이디
 channel_id = #링크가 보내질 채널 ID
