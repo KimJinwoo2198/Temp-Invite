@@ -8,6 +8,7 @@ bot = commands.Bot(command_prefix = "!")
 buttons = ButtonsClient(bot)
 sever_id = #본섭 아이디
 channel_id = #링크가 보내질 채널 ID
+token = ''
 
 @buttons.click
 async def button_one(ctx):
@@ -30,4 +31,4 @@ async def create(ctx):
             ]
         )
 
-bot.run("ODkwOTczMzM3OTAyMjYwMjM1.YU3llQ.Xne1mLKdT1i-SG-F_8i60Rnk7Kg")
+bot.run(token)
