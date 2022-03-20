@@ -13,7 +13,7 @@ token = ''
 @buttons.click
 async def buttonclick(ctx):
     link = await bot.get_channel(server_id).create_invite(max_uses=1,unique=True)
-    await ctx.reply(f"{link}", flags=MessageFlags().EPHEMERAL)
+    a = await ctx.reply(f"{link}", flags=MessageFlags().EPHEMERAL)
 
 @bot.command()
 async def 생성(ctx):
