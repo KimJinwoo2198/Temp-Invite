@@ -1,2 +1,2 @@
 # Temp-Invite
-보안용 1회용 초대링크
+보안용 Temp Invite
